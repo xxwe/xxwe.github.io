@@ -1,110 +1,69 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en" class="loading">
 <head>
-  <meta charset="utf-8">
-  
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>c#点餐系统 - 肖贤卫的博客园</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="Sweet点餐系统项目介绍：一家店铺使用的外卖点餐系统本项目分三大模块：登录注册模块，用户模块，店家模块
+1.登录注册模块登录分为用户登录和管理员登录（店家），管理员有且只有一个账号可以登录。用户登,"> 
+    <meta name="author" content="肖贤卫"> 
+    <link rel="alternative" href="atom.xml" title="肖贤卫的博客园" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
-  
-  <title>c#点餐系统 | 肖贤卫的博客园</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Sweet点餐系统项目介绍：一家店铺使用的外卖点餐系统本项目分三大模块：登录注册模块，用户模块，店家模块 1.登录注册模块登录分为用户登录和管理员登录（店家），管理员有且只有一个账号可以登录。用户登录需要先注册，注册必须用手机号注册。   登录界面效果图 登录主要就是判断，多加些判断就行了   登录代码展示: 12345678910111213141516171819202122232425262">
-<meta property="og:type" content="article">
-<meta property="og:title" content="c#点餐系统">
-<meta property="og:url" content="http://yoursite.com/2020/04/09/c-%E7%82%B9%E9%A4%90%E7%B3%BB%E7%BB%9F/index.html">
-<meta property="og:site_name" content="肖贤卫的博客园">
-<meta property="og:description" content="Sweet点餐系统项目介绍：一家店铺使用的外卖点餐系统本项目分三大模块：登录注册模块，用户模块，店家模块 1.登录注册模块登录分为用户登录和管理员登录（店家），管理员有且只有一个账号可以登录。用户登录需要先注册，注册必须用手机号注册。   登录界面效果图 登录主要就是判断，多加些判断就行了   登录代码展示: 12345678910111213141516171819202122232425262">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2019062612285855.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMjI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/201906261230261.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMjI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190626124348229.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMjI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190626124621298.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMjI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190626130222796.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMjI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190626125543900.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMjI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190626125613118.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMjI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190626130130789.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMjI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190626130444317.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMjI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190626131407689.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMjI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190626131449980.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMjI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190626131511463.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMjI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190626131739826.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMjI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190626132038662.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMjI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190626132526308.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMjI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="article:published_time" content="2020-04-09T11:21:31.000Z">
-<meta property="article:modified_time" content="2020-04-09T11:22:10.000Z">
-<meta property="article:author" content="肖贤卫">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2019062612285855.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMjI2MA==,size_16,color_FFFFFF,t_70">
-  
-    <link rel="alternate" href="/atom.xml" title="肖贤卫的博客园" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+    
+<link rel="stylesheet" href="/css/diaspora.css">
 
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
 <meta name="generator" content="Hexo 4.2.0"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">肖贤卫的博客园</a>
-      </h1>
-      
+<body class="loading">
+    <span id="config-title" style="display:none">肖贤卫的博客园</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">c#点餐系统</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-c-点餐系统" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/04/09/c-%E7%82%B9%E9%A4%90%E7%B3%BB%E7%BB%9F/" class="article-date">
-  <time datetime="2020-04-09T11:21:31.000Z" itemprop="datePublished">2020-04-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      c#点餐系统
-    </h1>
-  
+    <div class="scrollbar"></div>
+</div>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Sweet点餐系统"><a href="#Sweet点餐系统" class="headerlink" title="Sweet点餐系统"></a>Sweet点餐系统</h1><p>项目介绍：一家店铺使用的外卖点餐系统<br>本项目分三大模块：登录注册模块，用户模块，店家模块</p>
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">c#点餐系统</h1>
+        <div class="stuff">
+            <span>四月 09, 2020</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h1 id="Sweet点餐系统"><a href="#Sweet点餐系统" class="headerlink" title="Sweet点餐系统"></a>Sweet点餐系统</h1><p>项目介绍：一家店铺使用的外卖点餐系统<br>本项目分三大模块：登录注册模块，用户模块，店家模块</p>
 <h2 id="1-登录注册模块"><a href="#1-登录注册模块" class="headerlink" title="1.登录注册模块"></a>1.登录注册模块</h2><p><strong>登录分为用户登录和管理员登录（店家），管理员有且只有一个账号可以登录。用户登录需要先注册，注册必须用手机号注册。</strong></p>
 <p>  <strong>登录界面效果图</strong><br> 登录主要就是判断，多加些判断就行了<img src="https://img-blog.csdnimg.cn/2019062612285855.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMjI2MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>   <strong>登录代码展示:</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br></pre></td><td class="code"><pre><span class="line">#region 窗体效果</span><br><span class="line">       public class Win32</span><br><span class="line">       &#123;</span><br><span class="line">           public const Int32 AW_HOR_POSITIVE &#x3D; 0x00000001; &#x2F;&#x2F; 从左到右打开窗口</span><br><span class="line">           public const Int32 AW_HOR_NEGATIVE &#x3D; 0x00000002; &#x2F;&#x2F; 从右到左打开窗口</span><br><span class="line">           public const Int32 AW_VER_POSITIVE &#x3D; 0x00000004; &#x2F;&#x2F; 从上到下打开窗口</span><br><span class="line">           public const Int32 AW_VER_NEGATIVE &#x3D; 0x00000008; &#x2F;&#x2F; 从下到上打开窗口</span><br><span class="line">           public const Int32 AW_CENTER &#x3D; 0x00000010; &#x2F;&#x2F;若使用了AW_HIDE标志，则使窗口向内重叠；若未使用AW_HIDE标志，则使窗口向外扩展。</span><br><span class="line">           public const Int32 AW_HIDE &#x3D; 0x00010000; &#x2F;&#x2F;隐藏窗口，缺省则显示窗口。</span><br><span class="line">           public const Int32 AW_ACTIVATE &#x3D; 0x00020000; &#x2F;&#x2F;激活窗口。在使用了AW_HIDE标志后不要使用这个标志。</span><br><span class="line">           public const Int32 AW_SLIDE &#x3D; 0x00040000; &#x2F;&#x2F;使用滑动类型。缺省则为滚动动画类型。当使用AW_CENTER标志时，这个标志就被忽略。</span><br><span class="line">           public const Int32 AW_BLEND &#x3D; 0x00080000; &#x2F;&#x2F;使用淡出效果。只有当hWnd为顶层窗口的时候才可以使用此标志。</span><br><span class="line">           [DllImport(&quot;user32.dll&quot;, CharSet &#x3D; CharSet.Auto)]</span><br><span class="line">           public static extern bool AnimateWindow(</span><br><span class="line">         IntPtr hwnd, &#x2F;&#x2F; handle to window</span><br><span class="line">             int dwTime, &#x2F;&#x2F; duration of animation</span><br><span class="line">             int dwFlags &#x2F;&#x2F; animation type</span><br><span class="line">             );</span><br><span class="line">       &#125;</span><br><span class="line">       #endregion</span><br><span class="line">       ValidCode validCode &#x3D; new ValidCode(5, ValidCode.CodeType.Numbers);&#x2F;&#x2F;实例化这个对象</span><br><span class="line">       </span><br><span class="line">       &#x2F;&#x2F;窗体加载</span><br><span class="line">       private void Login_Load(object sender, EventArgs e)</span><br><span class="line">       &#123;</span><br><span class="line">           picValidCode.Image &#x3D; Bitmap.FromStream(validCode.CreateCheckCodeImage());&#x2F;&#x2F;点击图片更换验证码</span><br><span class="line">           Win32.AnimateWindow(this.Handle,500, Win32.AW_VER_POSITIVE);&#x2F;&#x2F;窗体出现效果</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       &#x2F;&#x2F;验证码图片</span><br><span class="line">       private void picValidCode_Click(object sender, EventArgs e)</span><br><span class="line">       &#123;</span><br><span class="line">           picValidCode.Image &#x3D; Bitmap.FromStream(validCode.CreateCheckCodeImage());&#x2F;&#x2F;点击图片更换验证码</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       &#x2F;&#x2F;注册</span><br><span class="line">       private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)</span><br><span class="line">       &#123;</span><br><span class="line">           Enroll EN &#x3D; new Enroll();</span><br><span class="line">           this.Hide();</span><br><span class="line">           EN.ShowDialog();</span><br><span class="line">           Application.ExitThread();</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       &#x2F;&#x2F;登录按钮</span><br><span class="line">       private void LoginButton_Click(object sender, EventArgs e)</span><br><span class="line">       &#123;</span><br><span class="line">           Saveusername.name &#x3D; Username.Text;</span><br><span class="line">           string sql &#x3D; string.Format(&quot;select * from UserList where UserID&#x3D;&#39;&#123;0&#125;&#39;and UserPassword&#x3D;&#39;&#123;1&#125; &#39;&quot;, Username.Text, password.Text);</span><br><span class="line">           SqlDataReader reader &#x3D; DBHelper.GetDataReader(sql);</span><br><span class="line">           if (Username.Text &#x3D;&#x3D; &quot;&quot;)</span><br><span class="line">           &#123;</span><br><span class="line">               MessageBox.Show(&quot;请输入用户名！&quot;, &quot;提示&quot;, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);</span><br><span class="line">           &#125;</span><br><span class="line">           else if (password.Text &#x3D;&#x3D; &quot;&quot;)</span><br><span class="line">           &#123;</span><br><span class="line">               MessageBox.Show(&quot;请输入密码！&quot;, &quot;提示&quot;, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);</span><br><span class="line">           &#125;</span><br><span class="line">           else if (!this.txtValidCode.Text.Equals(validCode.CheckCode))&#x2F;&#x2F;验证是否输入正确</span><br><span class="line">           &#123;</span><br><span class="line"></span><br><span class="line">               MessageBox.Show(&quot; 请输入正确的验证码!&quot;, this.Text);</span><br><span class="line"></span><br><span class="line">               this.txtValidCode.Focus();</span><br><span class="line">               this.txtValidCode.Text &#x3D; &quot;&quot;;</span><br><span class="line">               reader.Close();</span><br><span class="line">               return;</span><br><span class="line"></span><br><span class="line">           &#125;</span><br><span class="line">           else if (reader.Read())</span><br><span class="line">           &#123;</span><br><span class="line">               Saveusername.ID &#x3D; reader[&quot;ID&quot;].ToString();&#x2F;&#x2F;获取ID用于个人中心修改信息</span><br><span class="line">               reader.Close();</span><br><span class="line">               if (Saveusername.name&#x3D;&#x3D;&quot;Sweet&quot;)</span><br><span class="line">               &#123;</span><br><span class="line">                   管理员界面.GLY gLY &#x3D; new 管理员界面.GLY();</span><br><span class="line">                   this.Hide();</span><br><span class="line">                   gLY.ShowDialog();</span><br><span class="line">                   Application.ExitThread();</span><br><span class="line">               &#125;</span><br><span class="line">               XMB xMB &#x3D; new XMB();</span><br><span class="line">               this.Hide();</span><br><span class="line">               xMB.ShowDialog();</span><br><span class="line">               Application.ExitThread();</span><br><span class="line">           &#125;</span><br><span class="line">           else</span><br><span class="line">           &#123;</span><br><span class="line">               MessageBox.Show(&quot;用户名或密码输入错误！&quot;, &quot;提示&quot;, MessageBoxButtons.OK, MessageBoxIcon.Error);</span><br><span class="line">           &#125;</span><br><span class="line">           reader.Close();</span><br><span class="line"></span><br><span class="line">           picValidCode.Image &#x3D; Bitmap.FromStream(validCode.CreateCheckCodeImage());&#x2F;&#x2F;点击图片更换验证码</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       &#x2F;&#x2F;忘记密码</span><br><span class="line">       private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)</span><br><span class="line">       &#123;</span><br><span class="line">           ForgetPwd forget &#x3D; new ForgetPwd();</span><br><span class="line">           this.Hide();</span><br><span class="line">           forget.ShowDialog();</span><br><span class="line">           Application.ExitThread();</span><br><span class="line">       &#125;</span><br><span class="line">       #region 用于窗体移动</span><br><span class="line">       private Point mPoint;&#x2F;&#x2F;定义一个位置信息Point用于存储鼠标位置</span><br><span class="line">       private void Login_MouseDown(object sender, MouseEventArgs e)</span><br><span class="line">       &#123;</span><br><span class="line">           mPoint &#x3D; new Point(e.X, e.Y);</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       private void Login_MouseMove(object sender, MouseEventArgs e)</span><br><span class="line">       &#123;</span><br><span class="line">           if (e.Button &#x3D;&#x3D; MouseButtons.Left)</span><br><span class="line">           &#123;</span><br><span class="line">               this.Location &#x3D; new Point(this.Location.X + e.X - mPoint.X, this.Location.Y + e.Y - mPoint.Y);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       #endregion</span><br><span class="line"></span><br><span class="line">       private void Login_FormClosed(object sender, FormClosedEventArgs e)</span><br><span class="line">       &#123;</span><br><span class="line">           Win32.AnimateWindow(this.Handle, 500, Win32.AW_BLEND|Win32.AW_HIDE);</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       private void pictureBox3_Click(object sender, EventArgs e)</span><br><span class="line">       &#123;</span><br><span class="line">           this.Close();</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       private void pictureBox4_Click(object sender, EventArgs e)</span><br><span class="line">       &#123;</span><br><span class="line">           this.WindowState &#x3D; FormWindowState.Minimized;&#x2F;&#x2F;最小化</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
@@ -138,109 +97,114 @@
 <p>3.销售统计界面<br><img src="https://img-blog.csdnimg.cn/20190626132038662.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMjI2MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>点击确认订单后会生成一个订单，效果图如下:</strong><br><img src="https://img-blog.csdnimg.cn/20190626132526308.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMjI2MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>代码展示</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">private void Button_Click(object sender, EventArgs e)</span><br><span class="line">       &#123;</span><br><span class="line">           Button button &#x3D; (Button)sender;&#x2F;&#x2F;将触发此事件的对象转换为该对象</span><br><span class="line">           OrderID &#x3D; int.Parse(button.Name.ToString());</span><br><span class="line">           string FilePath &#x3D; @&quot;D:\订单票据&quot;;&#x2F;&#x2F;获取可执行文件所在位置的FoodPhoto文件夹路径</span><br><span class="line">           if (Directory.Exists(FilePath) &#x3D;&#x3D; false)</span><br><span class="line">           &#123;</span><br><span class="line">               &#x2F;&#x2F;判断文件夹是否存在如果不存在创建文件夹</span><br><span class="line">               Directory.CreateDirectory(FilePath);&#x2F;&#x2F;创建文件夹</span><br><span class="line">           &#125;</span><br><span class="line">           string sql_12 &#x3D; string.Format(&quot;select * from Order_table where OrderID&#x3D;&#39;&#123;0&#125;&#39;&quot;, OrderID);</span><br><span class="line">           DataTable piao &#x3D; DBHelper.GetDataTable(sql_12);</span><br><span class="line">           for (int i &#x3D; 0; i &lt; piao.Rows.Count; i++)</span><br><span class="line">           &#123;</span><br><span class="line">               StreamWriter sw &#x3D; new StreamWriter(@&quot;D:\订单票据\Sweet点餐&quot;+piao.Rows[0][&quot;OrderNumber&quot;].ToString()+&quot;.txt&quot;);</span><br><span class="line">               string a &#x3D; &quot;订单编号：&quot;+piao.Rows[i][&quot;OrderNumber&quot;].ToString();</span><br><span class="line">               string b &#x3D; &quot;订单内容：&quot;;</span><br><span class="line">               sw.WriteLine(a);</span><br><span class="line">               sw.WriteLine(&quot;-------------------------------------------&quot;);</span><br><span class="line">               sw.WriteLine(b);</span><br><span class="line">               string sql_13 &#x3D; &quot;select Food_table.FoodName,Datailedorder_table.ShoppingCount,Datailedorder_table.ShoppingPrice from Order_table join Datailedorder_table on Datailedorder_table.OrderID&#x3D;Order_table.OrderID join Food_table on Food_table.FoodID&#x3D;Datailedorder_table.FoodID where Order_table.OrderNumber&#x3D;&#39;&quot; + piao.Rows[i][&quot;OrderNumber&quot;] + &quot;&#39;&quot;;&#x2F;&#x2F;查找需要的菜品名称，菜品购买的数量，每一种菜品购买的总金额</span><br><span class="line">               DataTable table &#x3D; DBHelper.GetDataTable(sql_13);</span><br><span class="line">               for (int j &#x3D; 0; j &lt; table.Rows.Count; j++)</span><br><span class="line">               &#123;</span><br><span class="line">                   string FoodName &#x3D; table.Rows[i][&quot;FoodName&quot;].ToString();</span><br><span class="line">                   string FoodCount &#x3D; table.Rows[i][&quot;ShoppingCount&quot;].ToString();</span><br><span class="line">                   string ShoppingPrice &#x3D; table.Rows[i][&quot;ShoppingPrice&quot;].ToString();</span><br><span class="line">                   sw.Write(&quot; &#123;0&#125;&quot;,FoodName);</span><br><span class="line">                   sw.Write(&quot;          x&#123;0&#125;&quot;, FoodCount);</span><br><span class="line">                   sw.WriteLine(&quot;                            &#123;0&#125;&quot;,ShoppingPrice);</span><br><span class="line">               &#125;</span><br><span class="line">               sw.WriteLine(&quot;-------------------------------------------&quot;);</span><br><span class="line">               string sum &#x3D; &quot;总计：&quot;+piao.Rows[i][&quot;ShoppingPrice&quot;].ToString();</span><br><span class="line">               string c &#x3D; &quot;联系地址：&quot;;</span><br><span class="line">               string Address &#x3D; &quot;联系地址：&quot;+piao.Rows[i][&quot;Address&quot;].ToString();</span><br><span class="line">               string User &#x3D; &quot;联系人：&quot;+piao.Rows[i][&quot;UserID&quot;].ToString();</span><br><span class="line">               string tel &#x3D; &quot;联系电话：&quot;+piao.Rows[i][&quot;UserTel&quot;].ToString();</span><br><span class="line">               sw.WriteLine(sum);</span><br><span class="line">               sw.WriteLine();</span><br><span class="line">               sw.WriteLine(c);</span><br><span class="line">               sw.WriteLine(&quot;-------------------------------------------&quot;);</span><br><span class="line">               sw.WriteLine(User);</span><br><span class="line">               sw.WriteLine(tel);</span><br><span class="line">               sw.WriteLine(Address);</span><br><span class="line">               sw.Close();</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/09/c-%E7%82%B9%E9%A4%90%E7%B3%BB%E7%BB%9F/" data-id="ck8sqfw1200005svz3a6b7nw4" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2020/04/09/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
         
-          <aside id="sidebar">
-  
-    
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='false'
+        data-ci='90c04817b694108fdcf3'
+        data-cs='99af36ef654cd88d85cdb70431927b1a5af4a9fc'
+        data-r='xxwe.github.io'
+        data-o='xxwe'
+        data-a='xxwe'
+        data-d='true'
+    >查看评论</div>
 
-  
-    
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li></ul>
     </div>
-  </div>
-
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/04/09/c-%E7%82%B9%E9%A4%90%E7%B3%BB%E7%BB%9F/">c#点餐系统</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/09/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
+</div>
+
+
     </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 肖贤卫<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
+</div>
 </body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
 </html>
